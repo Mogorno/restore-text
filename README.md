@@ -16,12 +16,12 @@
 > Потрібен Node.js **v18+** та `npm`.
 
 ```bash
-git clone https://github.com/your-username/restore-text.git
+git clone https://github.com/Mogorno/restore-text.git
 cd restore-text
 npm install
 ```
 
-> 🔤 Помісти файл `dictionary.txt` у директорію `src/`. У ньому мають бути англійські слова, по одному в рядку.
+> 🔤 Помісти файл `dictionary.txt` у директорію `public/`. У ньому мають бути англійські слова, по одному в рядку.
 
 ---
 
@@ -53,7 +53,8 @@ npm install
 src/
 ├── index.ts          # точка входу
 ├── TextRestorer.ts   # логіка відновлення
-├── dictionary.txt    # словник слів
+public/
+├── dictionary.txt    # словник слів (для запуску в демонстрації)
 ```
 
 ### 📥 Вхідні дані (приклад у index.ts):
@@ -151,7 +152,7 @@ import fs from 'fs';
 import * as path from 'path';
 import { TextRestorer } from './TextRestorer';
 
-const filePath = path.join(__dirname, 'dictionary.txt');
+const filePath = path.join(__dirname, '../public/dictionary.txt');
 const DICTIONARY = fs
     .readFileSync(filePath, 'utf-8')
     .toLowerCase()
